@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/home_1" android:icon="@mipmap/ic_launcher" android:title="@string/nv_home_1"/>
+    <item android:id="@+id/home_2" android:icon="@mipmap/ic_launcher" android:title="@string/nv_home_2"/>
+    <item android:id="@+id/home_3" android:icon="@mipmap/ic_launcher" android:title="@string/nv_home_3"/>
+    <!--<item android:id="@+id/home_4" android:icon="@mipmap/ic_launcher" android:title="@string/nv_home_4"/>-->
+
+</menu>

@@ -47,6 +47,10 @@ public abstract class BaseAct extends AppCompatActivity {
         return (V) findViewById(resId);
     }
 
+    protected final <V extends View> V $(View view, int resId) {
+        return (V) (view.findViewById(resId));
+    }
+
     /**
      * 启动新act
      *
