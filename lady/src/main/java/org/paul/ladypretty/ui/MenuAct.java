@@ -1,6 +1,8 @@
 package org.paul.ladypretty.ui;
 
+import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -24,6 +26,7 @@ public class MenuAct extends BaseAct implements NavigationView.OnNavigationItemS
 
         Toolbar toolbar = $(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         DrawerLayout drawer = $(R.id.drawer);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 MenuAct.this, drawer, toolbar, R.string.app_name, R.string.app_name_closed);
@@ -32,10 +35,23 @@ public class MenuAct extends BaseAct implements NavigationView.OnNavigationItemS
         NavigationView navigationView = $(R.id.nv_left);
         navigationView.setNavigationItemSelectedListener(this);
 
+
+        toolbar.setTitleTextColor(Color.WHITE);
+        toolbar.setTitle(R.string.app_name);
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home_1:
+
+                break;
+            case R.id.home_2:
+                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(MenuAct.this);
+                bottomSheetDialog.setContentView(R.layout.act_home);
+                bottomSheetDialog.show();
+                break;
+        }
         return false;
     }
 }
