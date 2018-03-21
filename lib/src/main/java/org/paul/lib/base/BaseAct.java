@@ -16,11 +16,13 @@ public abstract class BaseAct extends AppCompatActivity {
     protected String TAG = getClass().getSimpleName();
     private boolean hasWater;
     protected NetManager netManager = NetManager.getNetManager();
+    protected Bundle savedInstanceState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutId());
+        this.savedInstanceState=savedInstanceState;
+        setContentView(getLayoutId(savedInstanceState));
         bindUi();
     }
 
@@ -29,7 +31,7 @@ public abstract class BaseAct extends AppCompatActivity {
      *
      * @return
      */
-    protected abstract int getLayoutId();
+    protected abstract int getLayoutId(Bundle savedInstanceState);
 
     /**
      * 绑定视图

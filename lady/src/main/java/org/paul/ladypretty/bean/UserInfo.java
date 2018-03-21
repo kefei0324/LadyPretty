@@ -1,4 +1,4 @@
-package org.paul.ladypretty.ui.bean;
+package org.paul.ladypretty.bean;
 
 public class UserInfo {
     private String accountId, email, phoneNo,

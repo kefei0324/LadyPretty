@@ -1,15 +1,15 @@
 package org.paul.ladypretty.ui;
 
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import org.paul.ladypretty.BuildConfig;
 import org.paul.ladypretty.R;
-import org.paul.ladypretty.ui.bean.Login;
-import org.paul.ladypretty.ui.bean.RegionList;
-import org.paul.ladypretty.ui.bean.UnReadMsg;
+import org.paul.ladypretty.bean.Login;
+import org.paul.ladypretty.bean.RegionList;
+import org.paul.ladypretty.bean.UnReadMsg;
 import org.paul.lib.base.BaseAct;
 import org.paul.lib.base.Constants;
 import org.paul.lib.manager.SPManager;
@@ -27,7 +27,7 @@ public class NetTesterAct extends BaseAct implements View.OnClickListener {
     private TextView tv;
 
     @Override
-    protected int getLayoutId() {
+    protected int getLayoutId(Bundle savedInstanceState) {
         return R.layout.act_nettester;
     }
 

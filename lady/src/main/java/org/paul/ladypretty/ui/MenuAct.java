@@ -1,6 +1,7 @@
 package org.paul.ladypretty.ui;
 
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.NavigationView;
@@ -17,7 +18,7 @@ import org.paul.lib.base.BaseAct;
  */
 public class MenuAct extends BaseAct implements NavigationView.OnNavigationItemSelectedListener {
     @Override
-    protected int getLayoutId() {
+    protected int getLayoutId(Bundle savedInstanceState) {
         return R.layout.act_menu;
     }
 

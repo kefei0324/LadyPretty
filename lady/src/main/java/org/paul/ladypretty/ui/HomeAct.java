@@ -1,5 +1,6 @@
 package org.paul.ladypretty.ui;
 
+import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -18,7 +19,7 @@ import java.util.List;
 public class HomeAct extends BaseAct {
 
     @Override
-    protected int getLayoutId() {
+    protected int getLayoutId(Bundle savedInstanceState) {
         return R.layout.act_home;
     }
 
