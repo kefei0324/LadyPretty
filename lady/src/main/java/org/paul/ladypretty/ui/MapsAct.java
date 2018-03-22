@@ -10,19 +10,16 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import org.paul.ladypretty.R;
-import org.paul.lib.base.BaseAct;
 
-public class MapsAct extends BaseAct implements OnMapReadyCallback {
+public class MapsAct extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
 
     @Override
-    protected int getLayoutId(Bundle savedInstanceState) {
-        return R.layout.act_maps;
-    }
-
-    @Override
-    protected void bindUi() {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.act_maps);
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);

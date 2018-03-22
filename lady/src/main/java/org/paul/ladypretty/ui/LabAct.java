@@ -4,32 +4,21 @@ import android.annotation.TargetApi;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.widget.NestedScrollView;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import com.google.android.gms.maps.*;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
-import com.google.android.gms.maps.model.MarkerOptions;
 import org.paul.ladypretty.R;
-import org.paul.ladypretty.ui.map.MyAppBarLayout;
-import org.paul.ladypretty.ui.map.MyMapView;
 import org.paul.lib.base.BaseAct;
-
-import java.util.Map;
 
 public class LabAct extends BaseAct implements OnMapReadyCallback {
 
 //    private CoordinatorLayout coordinator;
     private GoogleMap mMap;
     private NestedScrollView nestedScrollView;
-//    private AppBarLayout appBarLayout;
 //    private CollapsingToolbarLayout toolbarLayout;
 
     private CollapsingToolbarLayoutState state;
@@ -41,7 +30,7 @@ public class LabAct extends BaseAct implements OnMapReadyCallback {
     }
     @Override
     protected int getLayoutId(Bundle savedInstanceState) {
-        return R.layout.act_lab_bak;
+        return R.layout.act_lab;
     }
     private static final String MAPVIEW_BUNDLE_KEY = "MapViewBundleKey";
     public boolean canFlow;
@@ -77,7 +66,7 @@ public class LabAct extends BaseAct implements OnMapReadyCallback {
             public void onClick(View view) {
 //                toolbarLayout.setNestedScrollingEnabled(true);
 //                canFlow=false;
-//                nestedScrollView.setNestedScrollingEnabled(true);
+                nestedScrollView.setNestedScrollingEnabled(true);
 //                mMapView.setNestedScrollingEnabled(true);
 //                appBarLayout.setNestedScrollingEnabled(true);
             }
