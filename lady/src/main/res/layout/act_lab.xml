@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,16 +18,15 @@
                 android:layout_height="wrap_content"
                 app:contentScrim="@color/red"
                 android:fitsSystemWindows="true"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
-            <fragment
+            <com.google.android.gms.maps.MapView
                     android:id="@+id/map"
-                    map:liteMode="true"
-                    map:cameraZoom="13"
                     android:fitsSystemWindows="true"
+                    android:background="@android:color/darker_gray"
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    class="com.google.android.gms.maps.SupportMapFragment"/>
+                    android:layout_height="300dp"/>
+            <!--class="com.google.android.gms.maps.SupportMapFragment"/>-->
 
             <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
@@ -47,10 +47,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+            <Button
+                    android:layout_width="match_parent"
+                    android:id="@+id/btn_1"
+                    android:text="@string/scroll_enable"
+                    android:layout_height="60dp"/>
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:id="@+id/btn_2"
+                    android:text="@string/scroll_non"
+                    android:layout_height="60dp"/>
+
             <View
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     android:background="@color/colorPrimary"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@color/colorAccent"/>
 
             <View
                     android:layout_width="match_parent"
@@ -60,7 +77,48 @@
             <View
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
+                    android:background="@color/colorPrimary"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     android:background="@color/colorAccent"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@color/colorPrimaryDark"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@color/colorPrimary"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@color/colorAccent"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@color/colorPrimaryDark"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@color/colorPrimary"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@color/colorAccent"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@color/colorPrimaryDark"/>
+
 
         </LinearLayout>
 

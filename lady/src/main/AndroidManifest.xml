@@ -16,6 +16,7 @@
             android:theme="@style/CustomTheme">
         <activity android:name=".ui.MenuAct"/>
         <activity android:name=".ui.NetTesterAct">
+
         </activity>
         <activity android:name=".ui.HomeAct">
         </activity>
