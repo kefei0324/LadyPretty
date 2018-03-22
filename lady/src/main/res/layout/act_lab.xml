@@ -3,36 +3,41 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/transparent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:map="http://schemas.android.com/tools">
 
     <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
         <android.support.design.widget.CollapsingToolbarLayout
                 android:layout_width="match_parent"
+                android:id="@+id/toolbarlayout"
                 android:layout_height="wrap_content"
+                app:contentScrim="@color/red"
+                android:fitsSystemWindows="true"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <fragment
+                    android:id="@+id/map"
+                    map:liteMode="true"
+                    map:cameraZoom="13"
+                    android:fitsSystemWindows="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    class="com.google.android.gms.maps.SupportMapFragment"/>
 
             <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     app:layout_collapseMode="pin"
                     android:layout_height="wrap_content"/>
-
-            <fragment
-                    android:id="@+id/map"
-                    map:liteMode="true"
-                    map:cameraZoom="13"
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    class="com.google.android.gms.maps.SupportMapFragment"/>
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
+            android:id="@+id/nest"
             android:layout_width="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_height="match_parent">

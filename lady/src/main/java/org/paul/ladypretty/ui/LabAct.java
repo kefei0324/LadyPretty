@@ -2,6 +2,9 @@ package org.paul.ladypretty.ui;
 
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v4.widget.NestedScrollView;
 import android.util.Log;
 import com.google.android.gms.maps.*;
 import com.google.android.gms.maps.model.CameraPosition;
@@ -14,6 +17,9 @@ import org.paul.lib.base.BaseAct;
 public class LabAct extends BaseAct implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private NestedScrollView nestedScrollView;
+    private AppBarLayout appBarLayout;
+    private CollapsingToolbarLayout toolbarLayout;
 
     @Override
     protected int getLayoutId(Bundle savedInstanceState) {
@@ -28,7 +34,19 @@ public class LabAct extends BaseAct implements OnMapReadyCallback {
         mapFragment.getMapAsync(this);
 //        MapView mapView =$(R.id.map);
 //        Toolbar toolbar = $(R.id.toolbar);
-
+        nestedScrollView = $(R.id.nest);
+        toolbarLayout = $(R.id.toolbarlayout);
+        appBarLayout = $(R.id.app_bar);
+//        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+//            @Override
+//            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+//                if (verticalOffset == 0) {
+//                    nestedScrollView.setNestedScrollingEnabled(false);
+//                } else {
+//                    nestedScrollView.setNestedScrollingEnabled(true);
+//                }
+//            }
+//        });
     }
 
     @Override
@@ -36,7 +54,7 @@ public class LabAct extends BaseAct implements OnMapReadyCallback {
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng hk = new LatLng(22.2988123,114.1721746);
+        LatLng hk = new LatLng(22.2988123, 114.1721746);
 //        mMap.addMarker(new MarkerOptions().position(hk).title("Marker in HK"));
         CameraPosition build = new CameraPosition.Builder().target(hk)
                 .zoom(13f)
@@ -80,7 +98,7 @@ public class LabAct extends BaseAct implements OnMapReadyCallback {
 //        mMap.animateCamera(update, callback);
 //            }
 //        } else {
-            mMap.moveCamera(update);
+        mMap.moveCamera(update);
 //        }
     }
 }
